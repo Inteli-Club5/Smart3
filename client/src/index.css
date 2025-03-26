@@ -1,0 +1,13 @@
+html,
+body {
+    /* Fixa o corpo no topo */
+    background-color: rgb(22, 22, 22);
+    color: #333;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100%;
+
+    /* Impede a rolagem */
+
+}

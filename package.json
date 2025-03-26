@@ -1,0 +1,25 @@
+{
+  "name": "hackathon-icp",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run build-client && node index.js",
+    "dev": "npm run dev-client & nodemon index.js",
+    "build-client": "npm run clean && parcel build client/src/index.html --out-dir client/dist",
+    "dev-client": "npm run clean && parcel client/src/index.html --out-dir client/dist",
+    "clean": "rm -rf .cache client/dist",
+    "parcel": "parcel client/src/index.html --out-dir client/dist"
+  },
+  "keywords": [],
+  "author": "Club5",
+  "license": "MIT",
+  "description": "A project developed for icp hackathon",
+  "dependencies": {
+    "express": "^4.21.2",
+    "nodemon": "^3.1.9",
+    "parcel-bundler": "^1.12.5",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "^6.4.0"
+  }
+}
