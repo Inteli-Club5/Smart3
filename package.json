@@ -7,7 +7,7 @@
     "dev": "npm run dev-client & nodemon index.js",
     "build-client": "npm run clean && parcel build client/src/index.html --out-dir client/dist",
     "dev-client": "npm run clean && parcel client/src/index.html --out-dir client/dist",
-    "clean": "rm -rf .cache client/dist",
+    "clean": "rimraf .cache client/dist",
     "parcel": "parcel client/src/index.html --out-dir client/dist"
   },
   "keywords": [],
@@ -21,5 +21,8 @@
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.4.0"
+  },
+  "devDependencies": {
+    "rimraf": "^6.0.1"
   }
 }
