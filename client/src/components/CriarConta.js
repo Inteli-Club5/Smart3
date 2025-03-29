@@ -47,7 +47,7 @@ const CriarConta = () => {
             setErroMensagem('The password cannot be empty!');
         } else {
             setErroMensagem('');
-            navigate("/escolha");  // Após o cadastro, redireciona para a página de escolha
+            navigate("/track");  // Após o cadastro, redireciona para a página de track
         }
 
         setEmailValido(emailValido);

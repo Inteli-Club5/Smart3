@@ -22,7 +22,7 @@ const Login = () => {
 
         // Valida os campos antes de tentar o login
         if (validarCampos()) {
-            navigate("/escolha");  // Navega para a próxima página após login
+            navigate("/track");  // Navega para a próxima página após login
         }
     };
 
