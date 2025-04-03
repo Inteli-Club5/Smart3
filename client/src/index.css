@@ -393,6 +393,15 @@ body {
     font-weight: bold;
 }
 
+.track-icon-3 {
+    width: 100px;
+    height: auto;
+    display: block;
+    margin: 5% auto;
+    margin-top: 5%;
+    align-self: center;
+}
+
 .track-icon-2 {
     width: 200px;
     height: auto;
@@ -487,7 +496,7 @@ body {
     /* Centraliza o conteúdo */
     width: 100%;
     text-align: center;
-    gap: 2vh;
+    gap: 4vh;
 }
 
 .no-effect {
@@ -514,7 +523,7 @@ body {
 
 .titulo4:hover {
     transition: 0.5s;
-    color: rgb(210, 199, 199);
+    color: rgb(201, 12, 218);
     text-decoration: none;
     /* Garante que o hover também não tenha underline */
 }
@@ -562,12 +571,12 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 35vh;
-    height: 40vh;
-    max-width: 300px;
+    width: 45vh;
+    height: 50vh;
+    max-width: 400px;
     /* Máximo de 300px para telas grandes */
-    min-width: 160px;
-    min-height: 220px;
+    min-width: 180px;
+    min-height: 240px;
     background-color: #f5f5f5;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -622,6 +631,10 @@ body {
 
 .access {
     color: rgb(3, 255, 3);
+}
+
+.access-2 {
+    color: rgb(225, 0, 255);
 }
 
 .containerHomeAss {
@@ -705,4 +718,64 @@ body {
     justify-content: center;
     align-items: center;
     border: 3px hidden rgb(55, 255, 0);
+}
+
+.perfil-geral {
+    background-color: black;
+    background-image: url('./components/images/backgrounds/Track.png');
+    height: 100vh;
+    /* Garante que ocupe toda a altura da tela */
+    min-height: 100vh;
+    /* Evita cortes em alguns navegadores */
+    overflow: auto;
+}
+
+.content-perfil {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 90%;
+    /* Evita que o conteúdo ultrapasse a tela */
+    padding: 10px;
+    box-sizing: border-box;
+    /* Garante que o padding não afete o tamanho total */
+}
+
+.profile-detail {
+    font-size: 16px;
+    color: #ffffff;
+    padding: 8px;
+    border-radius: 6px;
+    word-wrap: break-word;
+    /* Permite que textos longos quebrem corretamente */
+    overflow-wrap: break-word;
+}
+
+.logout-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.logout-container button {
+    background-color: #e4e2e2;
+    color: rgb(245, 4, 4);
+    padding: 12px 24px;
+    border-radius: 6px;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.logout-container button:hover {
+    background-color: #f80303;
+    color: white;
+    transform: scale(1.03);
+}
+
+.selecionado {
+    color: rgb(225, 0, 255)
 }

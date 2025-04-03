@@ -65,7 +65,7 @@ class Payment extends Component {
                         </Link>
                     </div>
                     <div className="profile-container">
-                        <Link to="/conta">
+                        <Link to="/account">
                             <img src={profile} alt="Conta" className="profile-image" />
                         </Link>
                     </div>

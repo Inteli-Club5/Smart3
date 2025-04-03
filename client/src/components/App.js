@@ -5,6 +5,7 @@ import CriarConta from './CriarConta';
 import Track from './Track';
 import Home from './Home';
 import Payment from './Payment';
+import Account from './Account';
 
 class App extends Component {
     render() {
@@ -16,6 +17,7 @@ class App extends Component {
                     <Route path="/track" element={<Track />} />
                     <Route path="/home" element={<Home />} />
                     <Route path="signature" element={<Payment />} />
+                    <Route path="/account" element={<Account />} />
                 </Routes>
             </div>
         );

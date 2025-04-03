@@ -73,7 +73,7 @@ const Home = () => {
                 <center>
                     <div className="logo-container2">
                         <Link class="no-effect" to="/track">
-                            <h1 className='titulo4'>Tracks</h1>
+                            <h1 className='titulo4 selecionado'>Tracks</h1>
                         </Link>
                         <Link class="no-effect" to="/ai">
                             <h1 className='titulo4'>AI</h1>
@@ -81,7 +81,7 @@ const Home = () => {
                     </div>
                 </center>
                 <div className="profile-container">
-                    <Link to="/conta">
+                    <Link to="/account">
                         <img src={profile} alt="Conta" className="profile-image" />
                     </Link>
                 </div>
