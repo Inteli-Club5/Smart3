@@ -5,7 +5,7 @@ const TEMPERATURE = 0.7;
 /**
  * Instruções padrão para a AI
  */
-const DEFAULT_SYSTEM_PROMPT = `Você é um assistente profissional para uma plataforma de educação web3 online.`;
+const DEFAULT_SYSTEM_PROMPT = `You are a professional assistant for an online Web3 education platform.`;
 
 /**
  * Histórico das conversas com o chatbot organizados por userId

@@ -468,7 +468,6 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .logo-container {
@@ -488,6 +487,7 @@ body {
     /* Centraliza o conteúdo */
     width: 100%;
     text-align: center;
+    gap: 2vh;
 }
 
 .no-effect {
@@ -622,4 +622,87 @@ body {
 
 .access {
     color: rgb(3, 255, 3);
+}
+
+.containerHomeAss {
+    background-image: url('./components/images/backgrounds/Payment.png');
+    background-size: cover;
+    height: 100%;
+    min-height: 100vh;
+}
+
+.horizontal-line2 {
+    border: none;
+    border-top: 2px solid #ddd;
+    margin: 16px 0;
+    width: 55%;
+}
+
+.cards-container2 {
+    margin-top: 10vh;
+    display: flex;
+    width: 100%;
+    height: auto;
+    /* Ajusta automaticamente */
+    flex-wrap: wrap;
+    /* Permite que os cards quebrem linha */
+    gap: 40px;
+}
+
+.cards-container2 a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.meioCard4 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 60%;
+    background-color: rgb(255, 196, 0);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    border: 3px hidden rgb(255, 196, 0);
+}
+
+.titulo6 {
+    text-align: left;
+    font-weight: bold;
+    font-size: 2.5em;
+    color: #fdfdfd;
+    margin-left: 2.5rem;
+}
+
+.buttonEscolha {
+    width: 70%;
+    height: 3em;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 14px;
+    margin-top: 1em;
+}
+
+.buttonEscolha2 {
+    width: 70%;
+    height: 3em;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 14px;
+    margin-top: 1em;
+    color: red;
+}
+
+.meioCard5 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 60%;
+    background-color: rgb(55, 255, 0);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    border: 3px hidden rgb(55, 255, 0);
 }

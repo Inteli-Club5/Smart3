@@ -16,7 +16,7 @@ class Track extends Component {
                             <img src={programacaoImg} alt="AI" className="card-image" />
                         </div>
                         <p className="titulo2">AI</p>
-                        <p className='textT'>Aprenda sobre: Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
+                        <p className='textT'>Master Artificial Intelligence, learn to develop machine learning models, build AI-powered applications, and explore the future of intelligent automation!</p>
                         <Link to="/track">
                             <button className='buttonEscolha'><img class="pequenino" src={lock}/></button>
                         </Link>
@@ -26,7 +26,7 @@ class Track extends Component {
                             <img src={blockchainImg} alt="Blockchain" className="card-image" />
                         </div>
                         <p className="titulo2">Blockchain</p>
-                        <p className='textT'>Aprenda sobre: Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
+                        <p className='textT'>Master blockchain and Web3, learn to create smart contracts, build dApps, and explore the world of decentralization!</p>
                         <Link to="/home">
                             <button className='buttonEscolha'>Join</button>
                         </Link>
@@ -36,7 +36,7 @@ class Track extends Component {
                             <img src={businessImg} alt="Business" className="card-image" />
                         </div>
                         <p className="titulo2">Business</p>
-                        <p className='textT'>Aprenda sobre: Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
+                        <p className='textT'>Master Business and Innovation, learn to create scalable strategies, build successful enterprises, and navigate the ever-evolving world of entrepreneurship!</p>
                         <Link to="/track">
                             <button className='buttonEscolha'><img class="pequenino" src={lock}/></button>
                         </Link>

@@ -75,6 +75,9 @@ const Home = () => {
                         <Link class="no-effect" to="/track">
                             <h1 className='titulo4'>Tracks</h1>
                         </Link>
+                        <Link class="no-effect" to="/ai">
+                            <h1 className='titulo4'>AI</h1>
+                        </Link>
                     </div>
                 </center>
                 <div className="profile-container">
