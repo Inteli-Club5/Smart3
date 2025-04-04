@@ -4,7 +4,6 @@ import logo from './images/Logo-1.png';
 import profile from './images/profile.png';
 import certificado from './images/certificado.png';
 
-
 const ModalCertificado = ({ isOpen, onClose, certificado }) => {
     if (!isOpen) return null;
 

@@ -12,28 +12,28 @@ class Payment extends Component {
             alert("Plug Wallet not found. Please install it to continue.");
             return;
         }
-    
+
         try {
             // Connect to Plug Wallet
             const connected = await window.ic.plug.requestConnect({
                 whitelist: [],
                 host: "https://icp0.io" // Testnet host
             });
-    
+
             if (!connected) {
                 alert("Failed to connect to Plug Wallet.");
                 return;
             }
-    
+
             // Get the user's principal ID
             const principal = await window.ic.plug.agent.getPrincipal();
             console.log("Connected with account:", principal.toText());
-    
+
             const icpAmount = 3.90 * 1e8; // Amount in e8s (ICP's smallest unit)
-    
+
             // Destination address (Testnet address example)
             const toAddress = "39d522449de73c7a09e493d7fd0197f7b8e0108c60945e68cb317d689f75fbf2";
-    
+
             // Execute the transaction with lower fee
             const result = await window.ic.plug.requestTransfer({
                 to: toAddress,
@@ -41,9 +41,9 @@ class Payment extends Component {
                 host: "https://icp0.io", // Ensure it's using the testnet
                 fee: 10_000, // Set a low fee (10,000 e8s ≈ 0.0001 ICP)
             });
-    
+
             console.log("Transaction sent! Details:", result);
-    
+
             if (result && result.height) {
                 window.location.href = "/home";
             } else {
@@ -53,7 +53,7 @@ class Payment extends Component {
             console.error("Error connecting or processing transaction:", error);
             alert("Error processing the transaction.");
         }
-    };    
+    };
 
     render() {
         return (

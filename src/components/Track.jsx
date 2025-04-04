@@ -18,7 +18,7 @@ class Track extends Component {
                         <p className="titulo2">AI</p>
                         <p className='textT'>Master Artificial Intelligence, learn to develop machine learning models, build AI-powered applications, and explore the future of intelligent automation!</p>
                         <Link to="/track">
-                            <button className='buttonEscolha'><img class="pequenino" src={lock}/></button>
+                            <button className='buttonEscolha'><img className="pequenino" src={lock} /></button>
                         </Link>
                     </div>
                     <div className="card">
@@ -38,7 +38,7 @@ class Track extends Component {
                         <p className="titulo2">Business</p>
                         <p className='textT'>Master Business and Innovation, learn to create scalable strategies, build successful enterprises, and navigate the ever-evolving world of entrepreneurship!</p>
                         <Link to="/track">
-                            <button className='buttonEscolha'><img class="pequenino" src={lock}/></button>
+                            <button className='buttonEscolha'><img className="pequenino" src={lock} /></button>
                         </Link>
                     </div>
                 </div>

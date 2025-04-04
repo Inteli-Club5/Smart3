@@ -2,27 +2,38 @@
   "name": "hackathon-icp",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "start": "npm run build-client && node index.js",
-    "dev": "npm run dev-client & nodemon index.js",
-    "build-client": "npm run clean && parcel build client/src/index.html --out-dir client/dist",
-    "dev-client": "npm run clean && parcel client/src/index.html --out-dir client/dist",
-    "clean": "rimraf .cache client/dist",
-    "parcel": "parcel client/src/index.html --out-dir client/dist"
+    "dev": "vite",
+    "build": "vite build"
   },
   "keywords": [],
   "author": "Club5",
   "license": "MIT",
   "description": "A project developed for icp hackathon",
   "dependencies": {
+    "@auth0/auth0-react": "^2.3.0",
+    "@cosmjs/crypto": "^0.33.1",
+    "@cosmjs/encoding": "^0.33.1",
+    "@cosmjs/proto-signing": "^0.33.1",
+    "@cosmjs/stargate": "^0.33.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "axios": "^1.8.4",
+    "cheerio": "^1.0.0",
+    "dotenv": "^16.4.7",
+    "ethers": "^6.13.5",
     "express": "^4.21.2",
-    "nodemon": "^3.1.9",
-    "parcel-bundler": "^1.12.5",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
-    "react-router-dom": "^6.4.0"
+    "qr-code-styling": "^1.9.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-google-button": "^0.8.0",
+    "react-router-dom": "^6.4.0",
+    "vite-plugin-static-copy": "^2.3.0"
   },
   "devDependencies": {
-    "rimraf": "^6.0.1"
+    "@types/node": "^22.13.14",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.2",
+    "vite": "^6.2.2"
   }
 }

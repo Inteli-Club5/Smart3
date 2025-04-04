@@ -72,10 +72,10 @@ const Home = () => {
                 </div>
                 <center>
                     <div className="logo-container2">
-                        <Link class="no-effect" to="/track">
+                        <Link className="no-effect" to="/track">
                             <h1 className='titulo4 selecionado'>Tracks</h1>
                         </Link>
-                        <Link class="no-effect" to="/ai">
+                        <Link className="no-effect" to="/ai">
                             <h1 className='titulo4'>AI</h1>
                         </Link>
                     </div>
