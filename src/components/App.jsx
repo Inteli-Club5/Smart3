@@ -6,6 +6,9 @@ import Track from './Track';
 import Home from './Home';
 import Account from './Account';
 import Payment from './Payment';
+import Lesson from './Lesson';
+import Quiz from './Quiz';
+import AI from './Ai';
 
 class App extends Component {
     render() {
@@ -14,26 +17,13 @@ class App extends Component {
                 <div className="content">
                     <Routes>
                         <Route path="/" element={<Login />} />
-                        <Route path="/home" element={
-                            <ProtectedRoute>
-                                <Home />
-                            </ProtectedRoute>
-                        } />
-                        <Route path="/track" element={
-                            <ProtectedRoute>
-                                <Track />
-                            </ProtectedRoute>
-                        } />
-                        <Route path="/signature" element={
-                            <ProtectedRoute>
-                                <Payment />
-                            </ProtectedRoute>
-                        } />
-                        <Route path="/account" element={
-                            <ProtectedRoute>
-                                <Account />
-                            </ProtectedRoute>
-                        } />
+                        <Route path="/home" element={<Home />} />
+                        <Route path="/track" element={<Track />} />
+                        <Route path="/signature" element={<Payment />} />
+                        <Route path="/account" element={<Account />} />
+                        <Route path="/lessons" element={<Lesson />} />
+                        <Route path="/quiz" element={<Quiz />} />
+                        <Route path="/ai" element={<AI />} />
                     </Routes>
                 </div>
             </div>

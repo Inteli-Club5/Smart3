@@ -40,11 +40,8 @@ const Login = () => {
                         </div>
                         <div className='container-botoes'>
                             <button className='botao-login' onClick={handleAuth0Login}>
-                                Login
+                                Account
                             </button>
-                            <Link to="/create-account">
-                                <button className='botao-login botao-login2'>Create</button>
-                            </Link>
                             <br />
                         </div>
                     </div>

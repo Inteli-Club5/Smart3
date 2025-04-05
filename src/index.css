@@ -17,7 +17,7 @@ body {
     display: flex;
     width: 100%;
     height: 100vh;
-    background-image: url("/components/images/backgrounds/login.svg");
+    background-image: url("./components/images/backgrounds/login.svg");
     background-size: cover;
     background-position: center;
     justify-content: flex-end;
@@ -146,7 +146,7 @@ body {
     display: flex;
     width: 100%;
     height: 100vh;
-    background-image: url("/components/images/backgrounds/createAccount.svg");
+    background-image: url("./components/images/backgrounds/createAccount.svg");
     background-size: cover;
     background-position: center;
     justify-content: flex-end;
@@ -941,4 +941,267 @@ body {
 
 .loading-content {
     animation: fade-in 0.5s ease-out forwards;
+}
+
+.div-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    justify-self: center;
+}
+
+.video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+    /* Limita o tamanho máximo do player */
+    margin: 20px auto;
+    /* Centraliza na tela */
+    padding: 10px;
+
+
+}
+
+/* Garante que o iframe do YouTube seja responsivo */
+.video-container iframe {
+    width: 100%;
+    height: 450px;
+    border-radius: 10px;
+}
+
+.lessons-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 780px;
+    /* Limita o tamanho máximo do player */
+    height: 40%;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    cursor: pointer;
+    background: linear-gradient(to bottom, #2E2E2E, #13131340);
+    border: 1px solid rgba(201, 198, 198, 0.497);
+    padding: 3em;
+    margin-bottom: 2%;
+
+}
+
+.titulo1 {
+    text-align: left;
+    font-weight: bold;
+    font-size: 2em;
+    color: #fdfdfd;
+    margin-bottom: 3vh;
+}
+
+.textT2 {
+    font-size: 1em;
+    margin-top: 1em;
+    color: #bebcbc;
+    text-align: justify;
+}
+
+.div-buttonsL {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 5%;
+    gap: 10px;
+}
+
+.next-button,
+.prev-button {
+    font-size: 16px;
+    font-family: Raleway, sans-serif;
+    font-weight: bold;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex: 1;
+    min-width: 120px;
+    max-width: 45%;
+}
+
+/* Botão "Próxima" */
+.next-button {
+    background-color: rgb(148, 244, 4);
+    color: white;
+}
+
+.next-button:hover {
+    background-color: #82c302;
+}
+
+.next-button:active {
+    background-color: #6aa002;
+}
+
+.prev-button {
+    background-color: white;
+    color: rgb(255, 0, 0);
+    border: 2px solid rgb(255, 0, 0);
+}
+
+.prev-button:hover {
+    background-color: rgb(255, 0, 0);
+    color: white;
+}
+
+.quiz-container2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding: 20px;
+    text-align: center;
+    margin-top: 10%;
+    justify-content: center;
+}
+
+.track-icon-3 {
+    width: 100px;
+    height: auto;
+    display: block;
+    margin: 5 auto;
+    margin-top: 5%;
+    align-self: center;
+}
+
+.question-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tituloQuestion {
+    font-weight: bold;
+}
+
+.white {
+    color: white;
+}
+
+.score {
+    margin-top: 20px;
+}
+
+.options-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.option-button {
+    padding: 15px;
+    width: 60%;
+    font-size: 18px;
+    margin: 10px 0;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.301);
+}
+
+.option-button:hover {
+    background-color: #0056b3;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.304);
+}
+
+.option-button.correct {
+    background-color: #28a745;
+}
+
+.option-button.incorrect {
+    background-color: #dc3545;
+}
+
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    width: 100%;
+    max-width: 600px;
+    margin: 40px auto;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #f9f9f9;
+}
+
+.chat-messages {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.message {
+    padding: 10px 15px;
+    border-radius: 20px;
+    max-width: 70%;
+    word-wrap: break-word;
+    font-size: 14px;
+}
+
+.user-message {
+    align-self: flex-end;
+    background-color: #d1e7dd;
+    color: #0f5132;
+}
+
+.ai-message {
+    align-self: flex-start;
+    background-color: #e2e3e5;
+    color: #41464b;
+}
+
+.chat-input-container {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+    background-color: #fff;
+}
+
+.chat-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    outline: none;
+    font-size: 14px;
+}
+
+.send-button {
+    margin-left: 10px;
+    padding: 0 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.send-button:hover {
+    background-color: #0056b3;
 }
