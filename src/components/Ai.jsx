@@ -1,9 +1,70 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { useAuth0 } from '@auth0/auth0-react';
+import { askGpt, resetConversation } from '../ai/aiModule';
 import logo from './images/logo-1.png';
 import profile from './images/profile.png';
 
 function AI() {
+    const [messages, setMessages] = useState([
+        { role: 'ai', content: 'Hi! How can I help you with your Web3 learning journey today?' }
+    ]);
+    
+    const [inputMessage, setInputMessage] = useState('');
+    const [isLoading, setIsLoading] = useState(false);
+    const messagesEndRef = useRef(null);
+    const { user, isAuthenticated } = useAuth0();
+    const userId = user?.sub || 'anonymous-user';
+
+    // Scroll to bottom of messages
+    useEffect(() => {
+        messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    }, [messages]);
+
+    // Reset conversation when component unmounts
+    useEffect(() => {
+        return () => {
+            // Optional: save conversation before unmounting
+        };
+    }, []);
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        const userMessage = inputMessage.trim();
+        
+        if (!userMessage) return;
+        
+        // Add user message to chat
+        setMessages(prev => [...prev, { role: 'user', content: userMessage }]);
+        setInputMessage('');
+        setIsLoading(true);
+        
+        try {
+            // Get AI response
+            const aiResponse = await askGpt(userMessage, userId);
+            
+            // Add AI response to chat
+            setMessages(prev => [...prev, { role: 'ai', content: aiResponse }]);
+        } catch (error) {
+            console.error('Error getting AI response:', error);
+            setMessages(prev => [...prev, { 
+                role: 'ai', 
+                content: 'Sorry, I encountered an error. Please try again later.',
+                isError: true
+            }]);
+        } finally {
+            setIsLoading(false);
+        }
+    };
+
+    const handleReset = () => {
+        resetConversation(userId);
+        setMessages([{ 
+            role: 'ai', 
+            content: 'Chat history has been reset. How can I help you today?' 
+        }]);
+    };
+
     return (
         <div className='containerHomeG'>
             <div className="menu-container">
@@ -19,36 +80,31 @@ function AI() {
                 </div>
             </div>
             <div className="chat-container">
-                <div className="chat-messages" id="chat-messages">
-                    <div className="message ai-message">Hi! How can I help you today?</div>
+                <div className="chat-messages">
+                    {messages.map((msg, index) => (
+                        <div 
+                            key={index}
+                            className={`message ${msg.role === 'user' ? 'user-message' : 'ai-message'} ${msg.isError ? 'error-message' : ''}`}
+                        >
+                            {msg.content}
+                        </div>
+                    ))}
+                    {isLoading && (
+                        <div className="message ai-message typing-indicator">
+                            <span>.</span><span>.</span><span>.</span>
+                        </div>
+                    )}
+                    <div ref={messagesEndRef} />
                 </div>
-                <form
-                    className="chat-input-container"
-                    onSubmit={(e) => {
-                        e.preventDefault();
-                        const input = e.target.elements.userInput;
-                        const message = input.value.trim();
-                        if (message) {
-                            const messageElement = document.createElement('div');
-                            messageElement.className = 'message user-message';
-                            messageElement.textContent = message;
-                            document.getElementById('chat-messages').appendChild(messageElement);
-                            input.value = '';
-
-                            // 🧠 Replace this block with your AI response function
-                            // Example: fetch('/api/chat', { method: 'POST', body: JSON.stringify({ message }) })
-
-                            setTimeout(() => {
-                                const aiReply = document.createElement('div');
-                                aiReply.className = 'message ai-message';
-                                aiReply.textContent = "Got it! Let me think...";
-                                document.getElementById('chat-messages').appendChild(aiReply);
-                                document.getElementById('chat-messages').scrollTop = document.getElementById('chat-messages').scrollHeight;
-                            }, 1000);
-                        }
-                    }}
-                >
-                    <input type="text" name="userInput" placeholder="Type your message..." className="chat-input" autoComplete="off" />
+                <form className="chat-input-container" onSubmit={handleSubmit}>
+                    <input 
+                        type="text" 
+                        value={inputMessage}
+                        onChange={(e) => setInputMessage(e.target.value)}
+                        placeholder="Type your message..." 
+                        className="chat-input" 
+                        autoComplete="off" 
+                    />
                     <button type="submit" className="send-button">Send</button>
                 </form>
             </div>

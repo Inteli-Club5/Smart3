@@ -1,4 +1,4 @@
-const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
+const OPENAI_API_KEY = import.meta.env.VITE_OPENAI_API_KEY;
 const MAX_TOKENS = 150;
 const TEMPERATURE = 0.7;
 
@@ -52,7 +52,7 @@ export function getConversationHistory(userId) {
  * const response = await askGpt("Como funciona blockchain?", "1234");
  */
 export async function askGpt(prompt, userId, {
-    model = 'gpt-4',
+    model = 'gpt-4o',
     rememberContext = true,
     systemPrompt = DEFAULT_SYSTEM_PROMPT,
     ...otherParams
