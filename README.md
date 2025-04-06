@@ -13,7 +13,7 @@ Additionally, Smart3 connects skilled talent with market opportunities, aligning
 - **Quizzes and challenges** – Validate knowledge through gamification mechanics.  
 - **Market connection** – Talent pool and job opportunities for Web3 professionals.
 - **Agent AI** - Learning Agent AI
-- 
+
 ## Team Members
 This project was designed and developed by students from Inteli – Institute of Technology and Leadership:
 - [Davi Duarte](https://github.com/Yuhtin)
