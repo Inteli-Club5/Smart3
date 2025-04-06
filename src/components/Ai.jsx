@@ -6,7 +6,7 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
-import logo from './images/logo-1.png';
+import logo from './images/Logo-1.png';
 import profile from './images/profile.png';
 import '../styles/Ai.css';
 

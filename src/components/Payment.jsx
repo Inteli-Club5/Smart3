@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import logo from './images/logo-1.png';
+import logo from './images/Logo-1.png';
 import profile from './images/profile.png';
 import pix from './images/pix.png';
 import onchain from './images/onchain.png';
