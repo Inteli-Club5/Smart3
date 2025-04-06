@@ -1,6 +1,6 @@
 # Smart3 - Learn, Build, and Grow in Web3 with AI-powered Hands-on Labs.
 
-<img src="./logo.png" alt="logo" width="150" height="100"/>
+<img src="./logo.png" alt="logo" width="300" height="300"/>
 
 ## Introdution
 Smart3 is an AI-powered platform that combines interactive learning and hands-on practice to empower professionals in the Web3 ecosystem. Through gamified tracks, quizzes, and sandbox labs, users learn about blockchain, DAOs, and DeFi while gaining real-world experience.  
