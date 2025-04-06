@@ -83,8 +83,9 @@ export function getConversationHistory(userId) {
  * @param {string} prompt - O prompt a ser enviado para o GPT-4.
  * @param {string} userId - ID do usuário que está interagindo com o chatbot
  * @param {Object} options - Opções para a chamada da API.
- * @param {string} options.model - O modelo de IA a ser usado (padrão 'gpt-4o').
+ * @param {string} options.model - O modelo de IA a ser usado (padrão 'gpt-4o-mini').
  * @param {boolean} options.rememberContext - Se deve manter histórico da conversa (padrão true).
+ * @param {string} options.provider - Provedor de AI ('openai' ou outro). Atualmente, apenas 'openai' é suportado.
  * @returns {Promise<string>} - Resposta do modelo.
  * 
  * Exemplo de uso:
@@ -93,11 +94,12 @@ export function getConversationHistory(userId) {
  * const response = await askGpt("Como funciona blockchain?", "1234");
  */
 export async function askGpt(prompt, userId, {
-    model = 'gpt-3.5-turbo',
+    model = 'gpt-4o-mini',
     rememberContext = true,
     systemPrompt = DEFAULT_SYSTEM_PROMPT,
     max_tokens = MAX_TOKENS,
     temperature = TEMPERATURE,
+    provider = 'openai', // Added provider parameter but we'll handle it separately
     ...otherParams
 } = {}) {
     // Obtém ou inicializa o histórico do usuário
@@ -112,13 +114,16 @@ export async function askGpt(prompt, userId, {
         : [{ role: 'system', content: systemPrompt }, { role: 'user', content: prompt }];
 
     try {
+        // Remove provider from otherParams to avoid passing it to OpenAI API
+        const { provider: _, ...apiParams } = otherParams;
+
         // Use OpenAI SDK to make request
         const completion = await openai.chat.completions.create({
             model,
             messages,
             max_tokens,
             temperature,
-            ...otherParams
+            ...apiParams // Use filtered parameters
         });
 
         const assistantResponse = completion.choices[0]?.message?.content?.trim() || '';

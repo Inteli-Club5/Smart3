@@ -2,8 +2,13 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth0 } from '@auth0/auth0-react';
 import { askGpt, resetConversation } from '../ai/aiModule';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import logo from './images/logo-1.png';
 import profile from './images/profile.png';
+import '../styles/Ai.css';
 
 function AI() {
     const [messages, setMessages] = useState([
@@ -40,8 +45,12 @@ function AI() {
         setIsLoading(true);
         
         try {
-            // Get AI response
-            const aiResponse = await askGpt(userMessage, userId);
+            // Get AI response - without the provider parameter
+            const aiResponse = await askGpt(userMessage, userId, {
+                model: 'gpt-4o-mini',
+                max_tokens: 500,
+                temperature: 0.7
+            });
             
             // Add AI response to chat
             setMessages(prev => [...prev, { role: 'ai', content: aiResponse }]);
@@ -86,7 +95,34 @@ function AI() {
                             key={index}
                             className={`message ${msg.role === 'user' ? 'user-message' : 'ai-message'} ${msg.isError ? 'error-message' : ''}`}
                         >
-                            {msg.content}
+                            {msg.role === 'user' ? (
+                                msg.content
+                            ) : (
+                                <ReactMarkdown 
+                                    remarkPlugins={[remarkGfm]}
+                                    components={{
+                                        code({node, inline, className, children, ...props}) {
+                                            const match = /language-(\w+)/.exec(className || '');
+                                            return !inline && match ? (
+                                                <SyntaxHighlighter
+                                                    style={vscDarkPlus}
+                                                    language={match[1]}
+                                                    PreTag="div"
+                                                    {...props}
+                                                >
+                                                    {String(children).replace(/\n$/, '')}
+                                                </SyntaxHighlighter>
+                                            ) : (
+                                                <code className={className} {...props}>
+                                                    {children}
+                                                </code>
+                                            );
+                                        }
+                                    }}
+                                >
+                                    {msg.content}
+                                </ReactMarkdown>
+                            )}
                         </div>
                     ))}
                     {isLoading && (
@@ -104,11 +140,17 @@ function AI() {
                         placeholder="Type your message..." 
                         className="chat-input" 
                         autoComplete="off" 
+                        disabled={isLoading}
                     />
-                    <button type="submit" className="send-button">Send</button>
+                    <button 
+                        type="submit" 
+                        className={`send-button ${isLoading ? 'disabled' : ''}`}
+                        disabled={isLoading}
+                    >
+                        {isLoading ? 'Sending...' : 'Send'}
+                    </button>
                 </form>
             </div>
-            <br />
         </div>
     );
 }
